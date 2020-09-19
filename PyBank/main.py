@@ -53,3 +53,13 @@ with open(csvpath) as csvfile:
     decreaseindex = change.index(maxdecreasechange)
     print(f'Greatest Increase in Profits: {dates[increaseindex+1]} (${maxincreasechange})')
     print(f'Greatest Decrease in Profits: {dates[decreaseindex+1]} (${maxdecreasechange})')
+
+with open(f'analysis/analysis.txt', 'w') as textfile:
+    textfile.write("                  \n")
+    textfile.write("Financial Analysis\n")
+    textfile.write("------------------\n")
+    textfile.write(f"Total Months: {countofmonths}\n")
+    textfile.write(f'Total Profit: ${sum(nettotalprofit)}\n')
+    textfile.write(f'Average Change: ${formatted}\n')
+    textfile.write(f'Greatest Increase in Profits: {dates[increaseindex+1]} (${maxincreasechange})\n')
+    textfile.write(f'Greatest Decrease in Profits: {dates[decreaseindex+1]} (${maxdecreasechange})\n')
